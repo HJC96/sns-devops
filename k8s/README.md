@@ -213,6 +213,7 @@ helm install prometheus prometheus-community/kube-prometheus-stack --version 88.
 
 kubectl apply -f k8s/monitoring/servicemonitor.yaml
 kubectl apply -f k8s/gateway/monitoring.yaml
+kubectl apply -k k8s/monitoring/dashboards
 
 ```
 
@@ -245,6 +246,7 @@ helm install otel-collector open-telemetry/opentelemetry-collector --version 0.1
   -n monitoring -f k8s/monitoring/otel-collector-values.yaml
 
 kubectl apply -f k8s/gateway/loki.yaml
+kubectl apply -f k8s/monitoring/grafana-loki-datasource.yaml
 ```
 
 ### 4-6. Tempo + OTel Collector 확장 (07강)
