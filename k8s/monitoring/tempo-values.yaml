@@ -13,7 +13,6 @@ tempo:
   metricsGenerator:
     enabled: false
   receivers:
-    opencensus: null
     otlp:
       protocols:
         grpc:
